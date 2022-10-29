@@ -1,0 +1,11 @@
+# Tweeps
+<img src="https://lh3.googleusercontent.com/jz7ZZn9x2sdAvnpj3CMsB5mYxqaoKYk91X8rhp9WiDohKyUDnQSTR2fAY4NZqA5jRwBnTc_7hqiBwcdGWDa1rNKmq0RFsyyzIzjL-Fp_xPUGjpRaqPodznDY27VUos9EZHaMSLgWcCrTsmZIDU59LKRETJElm5vyDiN0QXoXwMpx7bjH5LnNfliIjli53XLlkqswpPGBNwKaBDD1AxxGEdZB-mjZFhdZuFxmHwPKBNnPJ7MabcJTbYq1ejyCsM4ljSKhjbBF6OGDz9mL_UpEo3dwT7HYGnhJsmCd9zl966kHUiwIV4ceU2OyZBbUi8uuvFCNEYWdQ3L4MqtjaG11JAHWf3ZVKUd5Z8R8HDI5h8wLRRasoud9eyUohCy2NqqltHRRF79qvRSi0MLAQwvIhkiubfaHE9Zc0F5-lU0zQxwFSE6sPzyfKGJpkkqhdU2fLKoTfVwx2XyBOfd6uYX6-kbFs0SINS2XGs3-cw0FSQV0EAJ1yaMu9mS8K5wmblkfXixMTO9rNae6p6srr6oIDm3Ba67nO3wfKRIv77TbTjDYsZiUIk9NRuoQCGsqdLul41PDVGx-JHCYYYgGE_eTIxkaha9h6SKHa7HMUgKY5MY0Ty2La3znNYn-zIHyc8Apnm1hIfsP3AaoVVvWdGLO4IzrYyj4B32Cdgav8vXLOnyHrUEheGnqiX1_tbduSjQ818Kw14bFtRv9xdpdKz5giWYivZHrn_IVNmHrh2asfOcHoU-qbp1T4gOiLizmORTm3bVj4lSNU-UaXKdMUQuLR7V-aayuRNjY1N0CEYq1KsndsfbxGS_hC6-WI6wR8GJakl72kMjgFyV296vjvb9RmkJ7AIjsj2nKsuqR7NkdfZcYdIA_T8O9JQkJLCI3iJvqvs2No05l4N4OzcPgctBIkPTm9ce48ajZqYIGgSYVGSGOH0YU=w2800-h1780-no?authuser=0" />
+
+## Installation
+
+- In a Terminal, navigate the the project folder. 
+- Create a virtual environemnt. 
+- Install the dependencies by running ```pip install -r requirements.txt```
+- Make migrations by running "Python manage.py migrate"
+- Start development server by running ```python manage.py runserver```
+- Navigate to your browser and open the local server at [127.0.0.1:8000](http://127.0.0.1:8000) 
