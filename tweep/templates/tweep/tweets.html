@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div id="app">
+
+    <div class="publish_tweep">
+        <h3>Welcome to Tweep. Tweep now, no login required.</h3>
+
+        <form v-on:submit.prevent="publishNewTweep">
+            <div class="row">
+                <div class="col-6">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="name" class="form-control" v-model="name">
+                </div>
+                <div class="col-6">
+                    <label for="tweet" class="form-label">Message</label>
+                    <input type="text" class="form-control" v-model="message">
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-warning btn-block">Tweep!</button>
+        </form>
+    </div>
+
+
+    <div class="available_tweeps">
+        <h4>Published Tweeps</h4>
+
+        <table class="table table-responsive">
+
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Tweet</th>
+                    <th scope="col">Time Created</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr v-for="tweet in tweets">
+                    <th scope="row">[[ tweet.id ]]</th>
+                    <td>[[ tweet.name ]]</td>
+                    <td>[[ tweet.message ]]</td>
+                    <td>[[ tweet.time_created ]]</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    let app = new Vue({
+        el: '#app',
+        delimiters: ['[[', ']]'],
+        data() {
+            return {
+                tweets: [],
+                name: '',
+                message: ''
+            }
+        },
+        mounted() {
+            this.getTweets();
+        },
+        methods: {
+            getTweets() {
+                axios({
+                    method: 'get',
+                    url: 'http://127.0.0.1:8000/api/tweet/',
+                }).then(response => this.tweets = response.data.data);
+            },
+
+            async publishNewTweep() {
+                try {
+
+                    // Send a POST request to the API
+                    const response = await axios.post('http://127.0.0.1:8000/api/tweet/', {
+                        name: this.name,
+                        message: this.message
+                    });
+
+                    // Append the returned data to the tasks array
+                    this.tweets.push(response.data.data);
+
+                    // Reset the name and tweet field values.
+                    this.name = '';
+                    this.message = '';
+
+                } catch (error) {
+
+                    // Log the error
+                    console.log(error);
+                }
+            }
+
+        }
+    })
+</script>
+{% endblock scripts %}
